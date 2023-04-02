@@ -45,11 +45,6 @@ public class Student implements Serializable, Comparable<Student> {
 
     @Override
     public int compareTo(Student student) {
-        if(this.studentId != null) {
-            return this.studentId.compareTo(student.studentId);
-        } else {
-            return 0;
-        }
-
+        return this.studentId.compareTo(student.studentId);
     }
 }
