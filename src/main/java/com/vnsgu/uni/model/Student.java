@@ -14,8 +14,8 @@ import java.util.Date;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name="students")
-public class Student implements Serializable {
+@Table(name="student")
+public class Student implements Serializable, Comparable<Student> {
 
     @Id
     @Column(name="student_id")
@@ -41,5 +41,15 @@ public class Student implements Serializable {
         this.studentName = studentName;
         this.birthDate = birthDate;
         this.city = city;
+    }
+
+    @Override
+    public int compareTo(Student student) {
+        if(this.studentId != null) {
+            return this.studentId.compareTo(student.studentId);
+        } else {
+            return 0;
+        }
+
     }
 }

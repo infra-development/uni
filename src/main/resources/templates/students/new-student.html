@@ -16,7 +16,7 @@
     <hr>
 
     <form action="#" th:action="@{/save}" th:object="${student}" method="POST">
-        <input type="text" th:field="*{studentId}" placeholder="Student Id" class="form-control mb-4 col-4">
+        <input type="hidden" th:field="*{studentId}" placeholder="Student Id" class="form-control mb-4 col-4">
         <input type="text" th:field="*{studentName}" placeholder="Student Name" class="form-control mb-4 col-4">
         <input type="text" th:field="*{city}" placeholder="City" class="form-control mb-4 col-4">
         <input type="text" th:field="*{birthDate}" th:value="${#dates.format(birthDate, 'yyyy-MM-dd')}" placeholder="Birth Date" class="form-control mb-4 col-4">

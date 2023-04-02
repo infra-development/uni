@@ -16,7 +16,7 @@
 
     <form action="#" th:action="@{/save}" th:object="${student}" method="POST">
         <!-- Add hidden form field to handle update -->
-        <input type="text" th:field="*{studentId}" class="form-control mb-4 col-4">
+        <input type="hidden" th:field="*{studentId}" class="form-control mb-4 col-4">
         <input type="text" th:field="*{studentName}" class="form-control mb-4 col-4">
         <input type="text" th:field="*{city}" class="form-control mb-4 col-4">
         <input type="text" th:field="*{birthDate}" th:value="${#dates.format(student.birthDate, 'yyyy-MM-dd')}" class="form-control mb-4 col-4">

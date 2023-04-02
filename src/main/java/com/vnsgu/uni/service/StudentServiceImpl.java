@@ -4,9 +4,7 @@ import com.vnsgu.uni.model.Student;
 import com.vnsgu.uni.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -19,7 +17,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Set<Student> findAll() {
-        Set<Student> students = new HashSet<>();
+        Set<Student> students = new TreeSet<>();
         this.studentRepository.findAll().forEach(students :: add);
         return students;
     }
